@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Updated - Newsletter Signup</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            max-width: 800px;
+            overflow: hidden;
+        }
+        .left-side {
+            padding: 40px;
+            flex: 1;
+        }
+        .right-side {
+            background-color: #ff6b6b;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        li:before {
+            content: "•";
+            color: #ff6b6b;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .input-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="email"].error {
+            border-color: #ff6b6b;
+            background-color: #ffeeee;
+        }
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.8em;
+            display: none;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .graph {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            color: #ff6b6b;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .confirmation-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 350px;
+            display: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .confirmation-icon {
+            background-color: #ff6257;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .confirmation-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #242742;
+            margin-bottom: 15px;
+        }
+        .confirmation-message {
+            color: #6b6b7b;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .confirmation-email {
+            font-weight: bold;
+            color: #242742;
+        }
+        .dismiss-button {
+            background-color: #242742;
+            color: white;
+            border: none;
+            padding: 15px 0;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dismiss-button:hover {
+            background-color: #3e416d;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+                <li>Product discovery and building what matters</li>
+                <li>Measuring to ensure updates are a success</li>
+                <li>And much more!</li>
+            </ul>
+            <div class="input-container">
+                <input type="email" id="email-input" placeholder="email@company.com">
+                <span class="error-message">Valid email required</span>
+            </div>
+            <button onclick="validateEmail()">Subscribe to monthly newsletter</button>
+        </div>
+        <div class="right-side">
+            <img src="assets/images/illustration-sign-up-desktop.svg" alt="">
+        </div>
+    </div>
+        <div class="confirmation-card">
+            <div class="confirmation-icon">✓</div>
+            <h2 class="confirmation-title">Thanks for subscribing!</h2>
+            <p class="confirmation-message">
+                A confirmation email has been sent to 
+                <span class="confirmation-email"></span>. 
+                Please open it and click the button inside to confirm your subscription.
+            </p>
+            <a href="" class="dismiss-button" type="submit">Dismiss message</a>
+        </div>
+
+<script src="index.js"></script>
+</body>
+</html>
